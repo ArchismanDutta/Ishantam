@@ -1,0 +1,11 @@
+.group { display: inline-flex; align-items: center; border: 1px solid var(--rule-strong); padding: 1px; font-size: 11px; letter-spacing: .08em; font-weight: 600; text-transform: uppercase; }
+.button { min-width: 36px; padding: 7px 13px; background: transparent; color: var(--ink-soft); transition: background .18s, color .18s; }
+.button[aria-pressed="true"] { background: var(--ink); color: var(--ivory); }
+.compact { font-size: 10px; }
+.compact .button { min-width: 36px; padding: 6px 10px; }
+.hindi { font-family: var(--font-sanskrit); letter-spacing: 0; font-size: 13px; font-weight: 500; }
+@media (max-width: 540px) {
+  .compact { font-size: 9px; letter-spacing: .03em; }
+  .compact .button { min-width: 0; padding: 4px 6px; }
+  .compact .hindi { font-size: 11px; }
+}

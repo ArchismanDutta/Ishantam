@@ -16,7 +16,23 @@
 .dialog > a { width: 100%; }
 @media (max-width: 1120px) { .inner { gap: 18px; } .nav { gap: 16px; } .actions { gap: 12px; } .actions :global(.btn) { background: linear-gradient(110deg,#f0cf90,#d9ad62); color: #3d1020; border-color: #e4be79; padding-inline: 15px; } }
 @media (max-width: 940px) { .nav { display: none; } .actions { margin-left: auto; } .menuButton { display: flex; } }
-@media (max-width: 540px) { .inner { min-height: 92px; gap: 7px; } .brandMark { width: 32px; height: 32px; font-size: 24px; } .brand { gap: 8px; } .brand small { font-size: 7px; } .brand > span:last-child > span { font-size: 19px !important; } .actions :global(.btn) { background: linear-gradient(110deg,#f0cf90,#d9ad62); color: #3d1020; border-color: #e4be79; display: none; } .actions { margin-left: auto; } }
+@media (max-width: 540px) {
+  .inner { min-height: 82px; gap: 7px; }
+  .brand { gap: 8px; }
+  .brand :global(img) { width: 72px; }
+  .actions { margin-left: auto; gap: 6px; flex-shrink: 0; }
+  .actions :global(.btn) { background: linear-gradient(110deg,#ffe0a0,#edbd6d); color: #3d1020; border-color: #f1cb83; display: inline-flex; align-items: center; gap: 5px; padding: 8px 10px; min-height: 39px; font-size: 9px; white-space: nowrap; box-shadow: 0 3px 12px #e0b56835; }
+  .actions :global(.btn svg) { width: 14px; height: 14px; }
+  .menuButton { width: 36px; height: 39px; flex: 0 0 36px; }
+}
+@media (max-width: 360px) {
+  .inner { gap: 5px; }
+  .brand :global(img) { width: 60px; }
+  .actions { gap: 4px; }
+  .actions :global(.btn) { padding: 7px 7px; min-height: 35px; font-size: 8px; }
+  .actions :global(.btn svg) { width: 12px; height: 12px; }
+  .menuButton { width: 32px; height: 35px; flex-basis: 32px; }
+}
 
 .dialog > :global(.btn-primary){background:linear-gradient(110deg,#f0cf90,#d9ad62);color:#3d1020;border-color:#e4be79}.brand :global(img),.dialogTop :global(img){filter:drop-shadow(0 1px 4px #e7b95318)}
 
