@@ -182,8 +182,8 @@ main > section {
   font-weight: 600;
   text-transform: none;
   border: 1px solid transparent;
-  transition: background .22s var(--ease-standard), color .22s var(--ease-standard),
-              border-color .22s var(--ease-standard), transform .22s var(--ease-standard);
+  transition: background-color .22s var(--ease-standard), color .22s var(--ease-standard),
+              border-color .22s var(--ease-standard), box-shadow .22s var(--ease-standard);
   user-select: none;
   white-space: nowrap;
 }

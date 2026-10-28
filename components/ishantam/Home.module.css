@@ -97,7 +97,8 @@
 .package li svg { flex-shrink: 0; color: var(--rust); margin-top: 3px; }
 .package :global(.btn) { padding: 13px 12px; min-height: 48px; font-size: 11px; width: 100%; gap: 8px; white-space: normal; }
 .packageFootnote { margin: 24px auto 0; max-width: 710px; text-align: center; font-size: 10px; color: var(--ink-mute); line-height: 1.8; }
-.how { background: #f5ecdd; border-block: 1px solid var(--rule-soft); }
+.how { position: relative; isolation: isolate; overflow: hidden; background: #f5ecdd; border-block: 1px solid var(--rule-soft); }
+.how::before { content: ''; position: absolute; z-index: -1; top: 0; right: 0; width: min(34%, 410px); height: 100%; background: url('/images/shiva-watermark.webp') center right / auto 100% no-repeat; opacity: .065; mix-blend-mode: multiply; mask-image: linear-gradient(90deg, transparent, #000 40%); pointer-events: none; }
 .steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px; }
 .steps li { position: relative; }
 .steps li > span { display: inline-grid; place-items: center; width: 35px; height: 35px; border-radius: 50%; border: 1px solid var(--brass); font-size: 11px; color: var(--maroon); margin-bottom: 18px; background: #f5ecdd; }

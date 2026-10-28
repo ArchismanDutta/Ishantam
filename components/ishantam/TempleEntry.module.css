@@ -2,22 +2,22 @@
 .scene, .sanctuary, .gateway, .vignette, .embers { position: absolute; inset: 0; }
 .scene { overflow: hidden; }
 .sanctuary { background: radial-gradient(ellipse at 50% 45%, #172026 0%, #080d13 43%, #03060b 77%); }
-.stage { position: absolute; left: 50%; top: 48%; width: min(82svh, 85vw); aspect-ratio: 1; transform: translate(-50%, -50%); isolation: isolate; }
+.stage { position: absolute; left: 50%; top: 48%; width: min(82svh, 85vw); aspect-ratio: 1; transform: translate(-50%, -50%); isolation: isolate; contain: layout paint; }
 .backlight { position: absolute; inset: -24%; pointer-events: none; }
 .halo { position: absolute; inset: 9%; border-radius: 50%; background: radial-gradient(circle, #ffe4ad66 0%, #d2a4662e 28%, #91b9cb1a 45%, transparent 68%); filter: blur(16px); }
 .rays { position: absolute; inset: -9%; border-radius: 50%; background: repeating-conic-gradient(from 12deg, transparent 0deg 9deg, #ead3a512 11deg, transparent 14deg 24deg); mask-image: radial-gradient(circle, transparent 10%, #0009 23%, #000 34%, transparent 68%); filter: blur(3px); animation: raysTurn 80s linear infinite; }
 .coreLight { position: absolute; inset: 29%; border-radius: 50%; background: #ffdf9b4a; filter: blur(35px); }
 .mandala { position: absolute; inset: 0; filter: drop-shadow(0 0 15px #e6c78755); }
 .mandalaImage { object-fit: contain; opacity: .75; animation: mandalaSpin 40s linear infinite; }
-.shiva { position: absolute; inset: 3% -3% -3%; z-index: 2; animation: shivaFloat 6s ease-in-out infinite; }
-.shivaImage { object-fit: contain; object-position: center bottom; animation: shivaGlow 3s ease-in-out infinite alternate; }
+.shiva { position: absolute; inset: 3% -3% -3%; z-index: 2; transform-origin: center bottom; animation: shivaFloat 8s ease-in-out infinite; will-change: transform; }
+.shivaImage { object-fit: contain; object-position: center bottom; animation: shivaGlow 5s ease-in-out infinite alternate; will-change: filter; }
 .groundLight { position: absolute; z-index: 1; left: 12%; right: 12%; bottom: -5%; height: 12%; border-radius: 50%; background: radial-gradient(ellipse, #dac39430, transparent 70%); filter: blur(10px); }
-.gateway { display: flex; perspective: 1500px; transform-style: preserve-3d; }
-.gateway::before { content: ''; position: absolute; inset: 0; z-index: 0; background: #080b10; }
+.gateway { display: flex; perspective: 1500px; transform-style: preserve-3d; isolation: isolate; contain: layout paint; }
+.gateway::before { content: ''; position: absolute; inset: 0; z-index: 0; background: #080b10; transform: translateZ(-1px); }
 .jamb { position: relative; z-index: 2; flex: 0 0 11.125%; background-size: cover; }
 .jambLeft { background-image: url('/images/temple-frame-left.webp'); background-position: right center; }
 .jambRight { background-image: url('/images/temple-frame-right.webp'); background-position: left center; }
-.door { position: relative; z-index: 1; flex: 0 0 38.875%; height: 100%; background-size: cover; backface-visibility: hidden; box-shadow: inset 0 0 55px #08060270; }
+.door { position: relative; z-index: 1; flex: 0 0 38.875%; height: 100%; background-size: cover; backface-visibility: hidden; transform-style: preserve-3d; box-shadow: inset 0 0 55px #08060270; }
 .door::after { content: ''; position: absolute; inset: 0; background: linear-gradient(#07090d38, transparent 40%, #080a0dbb); }
 .doorLeft { background-image: url('/images/temple-door-left.webp'); background-position: right center; transform-origin: left center; }
 .doorRight { background-image: url('/images/temple-door-right.webp'); background-position: left center; transform-origin: right center; }
@@ -49,8 +49,8 @@
 @keyframes mistDrift { from { transform: translateX(-9%) scaleY(.8); } to { transform: translateX(9%) scaleY(1.15); } }
 @keyframes emberRise { 0% { opacity: 0; transform: translate(0, 35px); } 25%, 65% { opacity: .45; } 100% { opacity: 0; transform: translate(34px, -100px); } }
 @keyframes mandalaSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes shivaFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-20px) scale(1.02); } }
-@keyframes shivaGlow { from { filter: drop-shadow(0 0 40px #ffb30066) drop-shadow(0 0 20px #fbb0404d); } to { filter: drop-shadow(0 0 60px #ffca2899) drop-shadow(0 0 30px #ffb30080); } }
+@keyframes shivaFloat { 0%, 100% { transform: translate3d(0, 0, 0) scale(1); } 50% { transform: translate3d(0, -8px, 0) scale(1.008); } }
+@keyframes shivaGlow { from { filter: drop-shadow(0 0 24px #ffb30045) drop-shadow(0 0 12px #fbb04030); } to { filter: drop-shadow(0 0 34px #ffca2870) drop-shadow(0 0 18px #ffb30055); } }
 @keyframes raysTurn { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 @media (max-aspect-ratio: 3/4) {
   .stage { top: 43%; width: min(94vw, 64svh); }

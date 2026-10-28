@@ -2,7 +2,7 @@
 .inner { display: flex; align-items: center; justify-content: space-between; gap: 25px; min-height: 108px; }
 .brand { display: inline-flex; gap: 11px; align-items: center; flex-shrink: 0; }
 .nav { display: flex; align-items: center; gap: clamp(16px, 1.9vw, 28px); margin-left: auto; }
-.nav a { font-size: 11px; letter-spacing: .025em; font-weight: 500; color: var(--ink-soft); padding: 11px 0; transition: color .2s; }
+.nav a { font-size: 11px; letter-spacing: .025em; font-weight: 500; color: var(--ink-soft); padding: 11px 0; text-transform: capitalize; transition: color .2s; }
 .nav a:hover { color: var(--rust); }
 .actions { display: flex; align-items: center; gap: 18px; }
 .actions :global(.btn) { background: linear-gradient(110deg,#f0cf90,#d9ad62); color: #3d1020; border-color: #e4be79; font-size: 11px; padding: 12px 20px; min-height: 44px; }
@@ -12,7 +12,7 @@
 .dialogTop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
 .dialogTop button { width: 44px; height: 44px; display: grid; place-items: center; }
 .dialog nav { display: flex; flex-direction: column; margin: 25px 0; }
-.dialog nav a { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--rule); font-size: 16px; }
+.dialog nav a { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--rule); font-size: 16px; text-transform: capitalize; }
 .dialog > a { width: 100%; }
 @media (max-width: 1120px) { .inner { gap: 18px; } .nav { gap: 16px; } .actions { gap: 12px; } .actions :global(.btn) { background: linear-gradient(110deg,#f0cf90,#d9ad62); color: #3d1020; border-color: #e4be79; padding-inline: 15px; } }
 @media (max-width: 940px) { .nav { display: none; } .actions { margin-left: auto; } .menuButton { display: flex; } }
