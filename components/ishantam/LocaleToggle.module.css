@@ -4,8 +4,11 @@
 .compact { font-size: 10px; }
 .compact .button { min-width: 36px; padding: 6px 10px; }
 .hindi { font-family: var(--font-sanskrit); letter-spacing: 0; font-size: 13px; font-weight: 500; }
+.shortLabel { display: none; }
 @media (max-width: 540px) {
   .compact { font-size: 9px; letter-spacing: .03em; }
   .compact .button { min-width: 0; padding: 4px 6px; }
   .compact .hindi { font-size: 11px; }
+  .compact .fullLabel { display: none; }
+  .compact .shortLabel { display: inline; }
 }
