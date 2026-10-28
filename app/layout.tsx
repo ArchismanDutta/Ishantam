@@ -11,8 +11,17 @@ import "@fontsource/tiro-devanagari-hindi/400.css";
 import "@fontsource/tiro-devanagari-hindi/400-italic.css";
 import "./globals.css";
 
+const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+const metadataBase = (() => {
+  try {
+    return new URL(configuredSiteUrl || "http://localhost:3000");
+  } catch {
+    return new URL("http://localhost:3000");
+  }
+})();
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase,
   title: "Ishantam · Mangal Dosha Shanti Puja at Mangalnath Temple, Ujjain",
   description:
     "Participate in the sacred Mangal Bhat Puja and Mangal Dosha Shanti Puja at Mangalnath Temple, Ujjain. Vedic priests perform the ceremony in your name and Gotra. Puja video shared via WhatsApp. Packages starting at ₹801.",
