@@ -34,6 +34,7 @@ export const metadata: Metadata = {
     "Vedic puja booking",
     "Sankalp Gotra puja",
   ],
+  other: { google: "notranslate" },
   openGraph: {
     title: "Ishantam · Mangal Dosha Shanti Puja at Mangalnath Temple, Ujjain",
     description:
