@@ -22,6 +22,9 @@ function loadCheckout() {
   });
   return scriptPromise;
 }
+export function preloadCheckout() {
+  void loadCheckout().catch(() => {});
+}
 export async function openCheckout(booking: CheckoutBooking, navigate: (path: string) => void) {
   // Save the capability before opening checkout so a reload can recover status.
   sessionStorage.setItem(BOOKING_STORAGE_KEY, JSON.stringify({ token: booking.token, locale: booking.locale }));

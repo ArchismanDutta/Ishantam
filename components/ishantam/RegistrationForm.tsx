@@ -6,7 +6,7 @@ import { useBooking } from "./BookingContext";
 import { useLocale } from "./LocaleContext";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { openCheckout } from "@/lib/checkout";
+import { openCheckout, preloadCheckout } from "@/lib/checkout";
 import { Arrow } from "./primitives";
 import { PackageFrame } from "./PackageFrame";
 
@@ -108,7 +108,7 @@ export function RegistrationForm() {
           <p className="body-l" style={{ marginTop: 20, maxWidth: 580 }}>{f.intro}</p>
         </div>
 
-        <form noValidate onSubmit={handleSubmit} className="reg-form" data-reveal>
+        <form noValidate onSubmit={handleSubmit} onFocusCapture={() => preloadCheckout()} className="reg-form" data-reveal aria-busy={status === "submitting"}>
           <PackageFrame selected={false} />
           <div className="reg-package">
             <div><span>{locale === "hi" ? "आपकी पूजा" : "YOUR OFFERING"}</span><strong>{t.packages.items.find(p => p.id === values.pkg)?.name}</strong></div>
@@ -226,6 +226,7 @@ export function RegistrationForm() {
               {status === "submitting" ? f.labels.submitting : f.labels.submit}
               {status !== "submitting" && <Arrow />}
             </button>
+            {status === "submitting" && <div className="payment-wait" role="status" aria-live="polite"><span className="payment-spinner" aria-hidden="true" />{locale === "hi" ? "सुरक्षित भुगतान विकल्प तैयार हो रहे हैं…" : "Preparing your secure payment options…"}</div>}
             <p className="body-xs" style={{ color: "var(--ink-mute)" }}>{f.labels.submitFootnote}</p>
             <Link href="/booking" className="body-xs">{locale === "hi" ? "मौजूदा बुकिंग की स्थिति जाँचें" : "Check an existing booking"}</Link>
           </div>
@@ -299,6 +300,30 @@ export function RegistrationForm() {
           gap: 14px;
           align-items: flex-start;
         }
+        .payment-wait {
+          display: flex;
+          align-items: center;
+          gap: 11px;
+          width: min(100%, 400px);
+          padding: 12px 15px;
+          border: 1px solid #d3b787;
+          border-radius: 6px;
+          background: #fff9ec;
+          color: #633042;
+          font-size: 12px;
+          line-height: 1.5;
+        }
+        .payment-spinner {
+          width: 18px;
+          height: 18px;
+          flex: 0 0 18px;
+          border: 2px solid #bd945740;
+          border-top-color: #761b2b;
+          border-radius: 50%;
+          animation: payment-spin .8s linear infinite;
+        }
+        @keyframes payment-spin { to { transform: rotate(360deg); } }
+        @media (prefers-reduced-motion: reduce) { .payment-spinner { animation-duration: 2s; } }
         @media (max-width: 900px) {
           .reg-layout { grid-template-columns: 1fr; gap: 28px; }
           .reg-head { position: static; padding-top: 0; }

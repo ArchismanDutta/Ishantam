@@ -39,20 +39,29 @@ export function TempleEntry() {
     const wasInert = content?.hasAttribute("inert");
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let done = false;
+    let finishing = false;
     let timeline: gsap.core.Timeline;
     const restore = () => {
       document.documentElement.style.overflow = previousOverflow;
       if (!wasInert) content?.removeAttribute("inert");
     };
-    const finish = () => {
+    const complete = () => {
       if (done) return;
       done = true;
+      finishing = false;
       restore();
       setVisible(false);
       const target = run > 0 && previousFocus?.isConnected ? previousFocus : document.getElementById("hero-heading");
       target?.focus({ preventScroll: true });
     };
-    finishRef.current = finish;
+    const finish = (immediate = false) => {
+      if (done || finishing) return;
+      finishing = true;
+      if (immediate) { complete(); return; }
+      timeline?.kill();
+      gsap.to(root, { autoAlpha: 0, duration: 0.65, ease: "power2.inOut", overwrite: true, onComplete: complete });
+    };
+    finishRef.current = () => finish(motion.matches);
     document.documentElement.style.overflow = "hidden";
     content?.setAttribute("inert", "");
     skipRef.current?.focus({ preventScroll: true });
@@ -63,7 +72,7 @@ export function TempleEntry() {
       if (stop) timeline?.pause(); else timeline?.resume();
     };
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") { event.preventDefault(); finish(); }
+      if (event.key === "Escape") { event.preventDefault(); finish(motion.matches); }
       if (event.key !== "Tab") return;
       const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>("button")).filter((button) => button.getClientRects().length > 0);
       const first = buttons[0];
@@ -71,13 +80,13 @@ export function TempleEntry() {
       if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
       else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
     };
-    const onMotionChange = () => { if (motion.matches) finish(); };
+    const onMotionChange = () => { if (motion.matches) finish(true); };
     root.addEventListener("keydown", onKey);
     document.addEventListener("visibilitychange", syncPlayback);
     motion.addEventListener("change", onMotionChange);
 
     const context = gsap.context(() => {
-      timeline = gsap.timeline({ defaults: { ease: "power2.inOut" }, onComplete: finish });
+      timeline = gsap.timeline({ defaults: { ease: "power2.inOut" }, onComplete: complete });
       if (motion.matches) {
         // Keep the doorway visible, but let the visitor enter without motion.
         timeline.pause();
