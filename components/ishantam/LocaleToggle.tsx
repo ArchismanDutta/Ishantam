@@ -2,7 +2,7 @@
 
 import { useLocale } from "./LocaleContext";
 
-/** Compact EN / हिं toggle styled as a hairline segmented control. */
+/** Compact English / Hindi toggle styled as a hairline segmented control. */
 export function LocaleToggle({ compact = false }: { compact?: boolean }) {
   const { locale, setLocale } = useLocale();
 
@@ -23,6 +23,7 @@ export function LocaleToggle({ compact = false }: { compact?: boolean }) {
     >
       <button
         type="button"
+        lang="en"
         aria-pressed={locale === "en"}
         onClick={() => setLocale("en")}
         style={{
@@ -33,10 +34,11 @@ export function LocaleToggle({ compact = false }: { compact?: boolean }) {
           minWidth: 36,
         }}
       >
-        EN
+        English
       </button>
       <button
         type="button"
+        lang="hi"
         aria-pressed={locale === "hi"}
         onClick={() => setLocale("hi")}
         style={{
@@ -51,7 +53,7 @@ export function LocaleToggle({ compact = false }: { compact?: boolean }) {
           fontWeight: 500,
         }}
       >
-        हिं
+        हिंदी
       </button>
     </div>
   );

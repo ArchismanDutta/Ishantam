@@ -120,10 +120,10 @@ export function TempleEntry() {
               <div className={styles.coreLight} />
             </div>
             <div className={styles.mandala}>
-              <Image src="/images/jyotirling/Mandala.png" alt="" fill priority sizes="(max-width: 700px) 94vw, 80vh" className={styles.mandalaImage} />
+              <Image src="/images/jyotirling/Mandala.webp" alt="" fill priority sizes="(max-width: 700px) 94vw, 80vh" className={styles.mandalaImage} />
             </div>
             <div className={styles.shiva}>
-              <Image src="/images/jyotirling/shiva-hero.png" alt="" fill priority sizes="(max-width: 700px) 90vw, 74vh" className={styles.shivaImage} />
+              <Image src="/images/jyotirling/shiva-hero.webp" alt="" fill priority sizes="(max-width: 700px) 90vw, 74vh" className={styles.shivaImage} />
             </div>
             <div className={styles.groundLight} />
           </div>
