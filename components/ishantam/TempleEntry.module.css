@@ -13,10 +13,11 @@
 .shivaImage { object-fit: contain; object-position: center bottom; animation: shivaGlow 3s ease-in-out infinite alternate; }
 .groundLight { position: absolute; z-index: 1; left: 12%; right: 12%; bottom: -5%; height: 12%; border-radius: 50%; background: radial-gradient(ellipse, #dac39430, transparent 70%); filter: blur(10px); }
 .gateway { display: flex; perspective: 1500px; transform-style: preserve-3d; }
+.gateway::before { content: ''; position: absolute; inset: 0; z-index: 0; background: #080b10; }
 .jamb { position: relative; z-index: 2; flex: 0 0 11.125%; background-size: cover; }
 .jambLeft { background-image: url('/images/temple-frame-left.webp'); background-position: right center; }
 .jambRight { background-image: url('/images/temple-frame-right.webp'); background-position: left center; }
-.door { position: relative; flex: 0 0 38.875%; height: 100%; background-size: cover; backface-visibility: hidden; box-shadow: inset 0 0 55px #08060270; }
+.door { position: relative; z-index: 1; flex: 0 0 38.875%; height: 100%; background-size: cover; backface-visibility: hidden; box-shadow: inset 0 0 55px #08060270; }
 .door::after { content: ''; position: absolute; inset: 0; background: linear-gradient(#07090d38, transparent 40%, #080a0dbb); }
 .doorLeft { background-image: url('/images/temple-door-left.webp'); background-position: right center; transform-origin: left center; }
 .doorRight { background-image: url('/images/temple-door-right.webp'); background-position: left center; transform-origin: right center; }

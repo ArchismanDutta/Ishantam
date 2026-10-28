@@ -52,13 +52,18 @@ function matches(filters: RegistrationFilters) {
   return query;
 }
 export async function listRegistrations(filters: RegistrationFilters): Promise<RegistrationList> {
-  const registrations = (await getDatabase()).registrations as unknown as RegistrationCollection;
+  const { registrations: registrationCollection, payments } = await getDatabase();
+  const registrations = registrationCollection as unknown as RegistrationCollection;
   const query = matches(filters); const total = await registrations.countDocuments(query); const pageSize = 20;
   const page = Math.max(1, Math.min(filters.page, Math.ceil(total / pageSize) || 1));
   const rows = await registrations.find(query).sort({ created_at: -1, id: -1 }).skip((page - 1) * pageSize).limit(pageSize).toArray();
   const summaryRows = await registrations.aggregate([{ $group: { _id: "$status", count: { $sum: 1 } } }]).toArray();
+  const paymentSummary = await payments.aggregate([
+    { $match: { state: "paid" } },
+    { $group: { _id: null, paidCount: { $sum: 1 }, totalCollected: { $sum: "$amount" } } },
+  ]).next() as { paidCount: number; totalCollected: number } | null;
   const counts = Object.fromEntries(summaryRows.map((x) => { const item = x as { _id: string; count: number }; return [item._id, item.count]; }));
-  return { registrations: await Promise.all(rows.map(fromRow)), total, page, pageSize, summary: { total: Object.values(counts).reduce((a, b) => a + b, 0), new: counts.new || 0, confirmed: counts.confirmed || 0, completed: counts.completed || 0 } };
+  return { registrations: await Promise.all(rows.map(fromRow)), total, page, pageSize, summary: { total: Object.values(counts).reduce((a, b) => a + b, 0), new: counts.new || 0, confirmed: counts.confirmed || 0, completed: counts.completed || 0 }, payments: { paidCount: paymentSummary?.paidCount ?? 0, totalCollected: paymentSummary?.totalCollected ?? 0 } };
 }
 export async function exportRegistrations(filters: RegistrationFilters): Promise<Registration[]> {
   const registrations = (await getDatabase()).registrations as unknown as RegistrationCollection;

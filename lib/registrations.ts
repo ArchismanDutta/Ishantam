@@ -43,6 +43,7 @@ export interface RegistrationList {
   page: number;
   pageSize: number;
   summary: { total: number; new: number; confirmed: number; completed: number };
+  payments: { paidCount: number; totalCollected: number };
 }
 
 export class InputError extends Error {

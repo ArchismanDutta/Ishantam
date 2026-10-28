@@ -67,6 +67,7 @@ export default function AdminPanel() {
     </div> : <>
       <div className={styles.intro}><div><span className={styles.eyebrow}>DEVOTEE RELATIONS</span><h1>Registrations</h1><p>Every submission, thoughtfully followed through.</p></div><button onClick={() => { setSelected(null); void load(); }} disabled={busy}>↻ Refresh</button></div>
       <div className={styles.stats}>{([['All registrations', data?.summary.total], ['Awaiting contact', data?.summary.new], ['Confirmed', data?.summary.confirmed], ['Completed', data?.summary.completed]] as const).map(([label, count]) => <div key={label}><span>{label}</span><strong>{count ?? '—'}</strong></div>)}</div>
+      <div className={styles.paymentStats} aria-label="Verified payments"><div><span>Successful payments</span><strong>{data?.payments.paidCount ?? '—'}</strong></div><div><span>Total collected · INR</span><strong>₹{(data?.payments.totalCollected ?? 0).toLocaleString('en-IN')}</strong></div></div>
       <section className={styles.workspace} aria-label="Registration list">
         <form className={styles.filters} onSubmit={e => { e.preventDefault(); setFilters(v => ({ ...v, search, page: 1 })); setSelected(null); }}>
           <label className={styles.search}>Search registrations<input placeholder="Name, phone, gotra or reference" value={search} onChange={e => setSearch(e.target.value)} maxLength={160} /></label>
