@@ -1,0 +1,258 @@
+/* A temple invitation: vermilion ink, warm paper, clear offerings. */
+.hero { padding: 140px 0 0; background: var(--paper); }
+.heroLocation { display: flex; align-items: center; gap: 7px; color: var(--ink-mute); font-size: 11px; margin-bottom: 15px; }
+.heroLocation svg { color: var(--rust); flex-shrink: 0; }
+.banner { position: relative; isolation: isolate; overflow: hidden; min-height: 490px; background: #f1dfbc; border: 1px solid #cdb082; }
+.bannerFrame { position: absolute; z-index: 3; inset: 11px; pointer-events: none; border: 1px solid #a47a3d55; }
+.bannerFrame::before, .bannerFrame::after { content: '✦'; position: absolute; color: #98733e; background: #f1dfbc; font-size: 15px; width: 25px; text-align: center; line-height: 20px; }
+.bannerFrame::before { left: -13px; top: -11px; }
+.bannerFrame::after { bottom: -11px; right: -13px; }
+.bannerCopy { position: relative; z-index: 2; width: 58%; padding: clamp(32px, 4vw, 58px); padding-right: 16px; }
+.invocation { font-size: 15px; color: #8c3b23; margin-bottom: 21px; }
+.bannerTitle { font-family: var(--font-display); font-weight: 600; color: #54271c; letter-spacing: -.02em; line-height: 1.08; font-size: clamp(36px, 3.7vw, 53px); }
+.bannerTitle > span { display: block; }
+.bannerTitle > span + span { margin-top: 8px; font-size: .81em; }
+.bannerTitle em { font-style: normal; }
+.bannerRule { display: flex; align-items: center; gap: 12px; width: min(280px, 75%); color: #a47c43; margin: 25px 0; font-size: 11px; }
+.bannerRule span { height: 1px; background: #a47c4366; flex: 1; }
+.bannerOffer { display: flex; gap: 22px; align-items: flex-end; }
+.bannerOffer p { font-size: 11px; color: #725c42; margin-bottom: 5px; }
+.bannerOffer strong { color: #642b1e; font-size: 43px; font-family: var(--font-display); font-weight: 600; line-height: 1; }
+.bannerPackageDetails { padding-bottom: 3px; font-size: 11px; color: #725c42; max-width: 170px; line-height: 1.8; }
+.bannerPackageDetails s { display: block; font-size: 12px; }
+.heroActions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 26px; }
+.whatsappLink { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 600; color: #624f36; border-bottom: 1px solid #91754c60; padding: 8px 0; }
+.whatsappLink svg { color: #4f683f; flex-shrink: 0; }
+.whatsappLink:hover { color: var(--rust); border-color: var(--rust); }
+.bannerArt { position: absolute; inset: 0 0 0 54%; z-index: 0; }
+.bannerArt img { object-fit: contain; object-position: center; mix-blend-mode: multiply; }
+.supporting { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: #fffdf8; border: 1px solid var(--rule); border-top: 0; }
+.supporting li { display: flex; align-items: center; gap: 12px; padding: 22px 20px; border-right: 1px solid var(--rule); }
+.supporting li:last-child { border-right: 0; }
+.detailIcon { color: var(--rust); flex-shrink: 0; }
+.supporting small { display: block; font-size: 9px; color: var(--ink-mute); margin-bottom: 4px; letter-spacing: .06em; text-transform: uppercase; }
+.supporting strong { display: block; font-size: 11px; font-weight: 600; color: var(--ink); line-height: 1.5; }
+.heroIntroduction { display: grid; grid-template-columns: 1.6fr 1fr; gap: 64px; align-items: center; padding: 34px 0 29px; }
+.heroIntroduction > div > p { max-width: 700px; font-size: 13px; color: var(--ink-soft); line-height: 1.85; }
+.heroIntroduction > div > button { margin-top: 11px; font-size: 10px; padding: 6px 0; }
+.templeNote { display: flex; gap: 16px; align-items: center; margin: 0; }
+.templeThumbnail { position: relative; width: 105px; height: 88px; flex-shrink: 0; overflow: hidden; }
+.templeThumbnail img { object-fit: cover; }
+.templeThumbnail span { position: absolute; bottom: 5px; right: 6px; color: #fff4d2; font-family: var(--font-sanskrit); font-size: 11px; text-shadow: 0 1px 4px #000; }
+.templeNote strong { display: block; font-size: 11px; font-weight: 600; color: var(--maroon); margin-bottom: 7px; }
+.templeNote p { font-size: 10px; line-height: 1.7; color: var(--ink-mute); }
+.brandNote { text-align: center; font-size: 9px; letter-spacing: .11em; color: var(--ink-mute); padding: 18px 0; border-top: 1px solid var(--rule); }
+.sectionHead { display: grid; grid-template-columns: 1.25fr 1fr; align-items: end; gap: 60px; margin-bottom: 40px; }
+.sectionHead h2, .centerHead h2, .about h2 { margin-top: 12px; }
+.sectionHead > p { max-width: 430px; margin-bottom: 3px; }
+.centerHead { max-width: 640px; text-align: center; margin: 0 auto 39px; }
+.centerHead p { margin-top: 16px; }
+.inclusions { position: relative; isolation: isolate; background: #fffdf7; overflow: hidden; border-top: 1px solid var(--rule-soft); }
+.ganeshaWatermark { position: absolute; z-index: -1; right: -2%; top: 0; height: 100%; width: 40%; background: url('/images/ganesha-cutout.webp') center / contain no-repeat; opacity: .045; mix-blend-mode: multiply; mask-image: radial-gradient(ellipse, #000 24%, transparent 70%); pointer-events: none; }
+.inclusionsLayout { display: grid; grid-template-columns: 1fr 300px; gap: 62px; align-items: center; }
+.inclusionsGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 35px; }
+.inclusion { padding: 23px 0; border-top: 1px solid var(--rule); }
+.inclusion > span { display: block; color: var(--brass); font-size: 11px; margin-bottom: 13px; font-variant-numeric: tabular-nums; }
+.inclusion h3, .templeDetail h3, .ritualList h3, .steps h3 { color: var(--ink); font-size: 15px; font-weight: 600; line-height: 1.5; }
+.inclusion p { margin-top: 9px; font-size: 13px; }
+.inclusionFootnote { border-top: 1px solid var(--rule); padding-top: 18px; font-size: 11px; color: var(--maroon); line-height: 1.8; }
+.offeringFigure, .aboutFigure, .ritualFigure { margin: 0; }
+.offeringFigure > div { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 50% 50% 3px 3px; }
+.offeringFigure img, .aboutFigure img, .ritualFigure img { object-fit: cover; }
+.offeringFigure figcaption, .aboutFigure figcaption, .ritualFigure figcaption { font-size: 10px; line-height: 1.7; color: var(--ink-mute); margin-top: 12px; }
+.about { background: linear-gradient(125deg,#f4eadb,#fbf6ed); }
+.aboutLayout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 75px; align-items: center; }
+.aboutFigure > div { position: relative; aspect-ratio: 4 / 4.5; overflow: hidden; border: 8px solid #fffaf2; outline: 1px solid #d7c6aa; }
+.aboutInvocation { margin-top: 15px; font-size: 15px; color: var(--maroon); }
+.aboutBody { display: grid; gap: 17px; margin-top: 22px; }
+.aboutBody p { font-size: 13px; }
+.templeDetail { margin-top: 24px; padding-top: 20px; border-top: 1px solid #cdbb9e; }
+.templeDetail p { margin-top: 7px; font-size: 13px; }
+.note { font-size: 10px; color: var(--ink-mute); line-height: 1.75; margin-top: 20px; }
+.benefits { position: relative; isolation: isolate; overflow: hidden; background: radial-gradient(ellipse at 90% 0,#6b263b55,transparent 65%),#320b18; color:#f6e5c9; }
+.shivaWatermark { position: absolute; z-index: -1; left: -6%; top: 11%; bottom: -12%; width: 48%; background: url('/images/shiva-nandi-cutout.webp') bottom / contain no-repeat; opacity: .045; filter: sepia(1); pointer-events: none; }
+.benefitsList { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 32px; }
+.benefitsList li { display: flex; align-items: baseline; gap: 16px; padding: 17px 0; border-bottom: 1px solid var(--rule); }
+.benefitsList li > span { font-size: 10px; color: var(--brass); min-width: 20px; font-variant-numeric: tabular-nums; }
+.benefitsList p { font-size: 12px; line-height: 1.6; color: var(--ink-soft); }
+.rituals { background: var(--paper-warm); border-block: 1px solid var(--rule-soft); }
+.ritualsLayout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; align-items: start; }
+.ritualFigure { position: sticky; top: 110px; }
+.ritualFigure > div { position: relative; aspect-ratio: 4 / 5; overflow: hidden; }
+.ritualList li { display: grid; grid-template-columns: 35px 1fr; gap: 15px; padding: 17px 0; border-top: 1px solid var(--rule); }
+.ritualList li:first-child { padding-top: 0; border: 0; }
+.ritualList li > span { font-size: 12px; padding-top: 4px; color: var(--rust); }
+.ritualList p { font-size: 12px; margin-top: 7px; }
+.packages { background: #fcf8f0; }
+.packagesGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.package { position: relative; padding: 29px 25px 25px; border: 1px solid #d9c8ad; background: #fffcf4; display: flex; flex-direction: column; }
+.packageSelected { border: 1px solid var(--maroon); background: #f6eddf; }
+.packageSelected::before { content: ''; position: absolute; left: -1px; right: -1px; top: -1px; height: 4px; background: var(--maroon); }
+.package header > svg { color: var(--rust); margin-bottom: 17px; }
+.package h3 { color: var(--ink); font-size: 17px; font-weight: 600; }
+.package header p { font-size: 11px; margin-top: 6px; color: var(--ink-mute); }
+.packagePrice { font-family: var(--font-display); font-size: 46px; font-weight: 600; line-height: 1.2; color: var(--maroon); padding: 20px 0; border-bottom: 1px solid var(--rule); }
+.package ul { display: grid; gap: 12px; padding: 23px 0 28px; flex: 1; align-content: start; }
+.package li { display: flex; align-items: flex-start; gap: 9px; font-size: 12px; line-height: 1.65; color: var(--ink-soft); }
+.package li svg { flex-shrink: 0; color: var(--rust); margin-top: 3px; }
+.package :global(.btn) { padding: 13px 12px; min-height: 48px; font-size: 11px; width: 100%; gap: 8px; white-space: normal; }
+.packageFootnote { margin: 24px auto 0; max-width: 710px; text-align: center; font-size: 10px; color: var(--ink-mute); line-height: 1.8; }
+.how { background: #f5ecdd; border-block: 1px solid var(--rule-soft); }
+.steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px; }
+.steps li { position: relative; }
+.steps li > span { display: inline-grid; place-items: center; width: 35px; height: 35px; border-radius: 50%; border: 1px solid var(--brass); font-size: 11px; color: var(--maroon); margin-bottom: 18px; background: #f5ecdd; }
+.steps li:not(:last-child)::after { content: ''; position: absolute; top: 17px; left: 49px; width: calc(100% - 28px); border-top: 1px dashed #b99c75; }
+.steps h3 { font-size: 13px; }
+.steps p { font-size: 11px; margin-top: 8px; }
+.final { position: relative; overflow: hidden; isolation: isolate; background: radial-gradient(ellipse at 90% 0,#7a264055,transparent 65%),#390b18; color: #fcf0d7; }
+.finalArt { position: absolute; z-index: -1; left: -60px; bottom: -40px; height: 110%; width: 46%; opacity: .09; filter: sepia(1); background: url('/images/shiva-nandi-cutout.webp') center bottom / contain no-repeat; pointer-events: none; }
+.finalInner { display: grid; grid-template-columns: 1.2fr 1fr; gap: 75px; align-items: center; }
+.final h2 { color: #fff2d8; margin-top: 14px; font-size: 36px; max-width: 480px; }
+.final h2 em { color: #edc58c; }
+.final :global(.eyebrow) { color: #edc58c; }
+.finalBody { color: #e6ccae; font-size: 13px; line-height: 1.85; margin-top: 19px; max-width: 520px; }
+.finalMantra { margin-top: 23px; color: #edc58c; font-size: 17px; }
+.finalPrices { display: flex; justify-content: space-between; gap: 18px; padding-bottom: 24px; border-bottom: 1px solid #d9ba8c44; }
+.finalPrices div { display: flex; flex-direction: column; gap: 7px; }
+.finalPrices strong { font-family: var(--font-display); font-size: 34px; line-height: 1; font-weight: 500; color: #fff2d8; }
+.finalPrices span { color: #e4c5a0; font-size: 10px; }
+.finalActions { display: grid; gap: 13px; margin-top: 25px; }
+.finalActions :global(.btn-primary) { background: #f0c988; border-color: #f0c988; color: #51291f; }
+.finalActions :global(.btn-primary:hover) { background: #ffdfab; }
+.finalActions :global(.btn-ghost) { border-color: #dfc3a380; color: #fff1d7; }
+:global([data-locale='hi']) .bannerTitle { font-family: var(--font-sanskrit); font-size: clamp(30px, 3.1vw, 43px); line-height: 1.45; font-weight: 400; }
+:global([data-locale='hi']) .bannerTitle > span + span { margin-top: 2px; }
+:global([data-locale='hi']) .bannerCopy { padding-top: 38px; padding-bottom: 38px; }
+@media (min-width: 1500px) { .banner { min-height: 530px; } }
+@media (max-width: 1050px) {
+  .hero { padding-top: 140px; }
+  .bannerCopy { width: 60%; padding: 37px; padding-right: 15px; }
+  .bannerArt { left: 55%; }
+  .bannerTitle { font-size: 42px; }
+  .heroIntroduction { gap: 30px; }
+  .supporting li { padding: 19px 14px; gap: 8px; }
+  .supporting strong { font-size: 10px; }
+  .inclusionsLayout { grid-template-columns: 1fr 250px; gap: 35px; }
+  .aboutLayout, .ritualsLayout { gap: 40px; }
+  .sectionHead { gap: 35px; }
+  .package { padding-inline: 19px; }
+  .steps { gap: 20px; }
+  .finalInner { gap: 40px; }
+}
+@media (max-width: 760px) {
+  .bannerCopy { padding: 30px; width: 64%; }
+  .bannerTitle { font-size: 37px; }
+  .bannerArt { left: 52%; opacity: .8; }
+  .heroActions { gap: 12px; flex-direction: column; align-items: flex-start; }
+  .bannerOffer { gap: 14px; }
+  .bannerPackageDetails { max-width: 145px; }
+  .supporting { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .supporting li:nth-child(2) { border-right: 0; }
+  .supporting li:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+  .heroIntroduction { grid-template-columns: 1fr; gap: 22px; }
+  .templeNote { max-width: 450px; }
+  .sectionHead { grid-template-columns: 1fr; gap: 17px; margin-bottom: 30px; }
+  .sectionHead > p { max-width: 600px; }
+  .inclusionsLayout { grid-template-columns: 1fr; }
+  .offeringFigure { display: grid; grid-template-columns: 140px 1fr; gap: 24px; align-items: center; }
+  .offeringFigure > div { border-radius: 50%; }
+  .offeringFigure figcaption { max-width: 280px; }
+  .aboutLayout { grid-template-columns: .75fr 1fr; gap: 30px; }
+  .benefitsList { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 22px; }
+  .ritualsLayout { grid-template-columns: 1fr; gap: 30px; }
+  .ritualFigure { position: static; display: grid; grid-template-columns: 190px 1fr; gap: 24px; align-items: center; }
+  .ritualFigure > div { aspect-ratio: 4 / 3; }
+  .packagesGrid { grid-template-columns: 1fr; max-width: 540px; margin-inline: auto; gap: 17px; }
+  .package { padding: 25px; }
+  .steps { grid-template-columns: 1fr; gap: 24px; }
+  .steps li { padding-left: 55px; }
+  .steps li > span { position: absolute; top: 0; left: 0; }
+  .steps li:not(:last-child)::after { top: 45px; bottom: -14px; left: 17px; height: auto; width: 0; border-left: 1px dashed #b99c75; border-top: 0; }
+  .steps p { max-width: 470px; font-size: 12px; }
+  .steps h3 { font-size: 14px; }
+  .finalInner { grid-template-columns: 1fr; gap: 34px; }
+  .finalPrices { justify-content: flex-start; gap: 50px; }
+  .finalActions { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 540px) {
+  .hero { padding-top: 116px; }
+  .heroLocation { font-size: 9px; margin-bottom: 12px; }
+  .banner { display: flex; flex-direction: column; min-height: 0; }
+  .bannerCopy { width: 100%; padding: 28px 25px 30px; }
+  .bannerTitle { font-size: 34px; max-width: 380px; }
+  .invocation { margin-bottom: 18px; font-size: 13px; }
+  .bannerRule { margin-block: 19px; }
+  .bannerOffer { display: block; max-width: 51%; }
+  .bannerOffer strong { font-size: 42px; }
+  .bannerArt { position: absolute; inset: auto 0 18px auto; width: 48%; height: 270px; z-index: 0; opacity: 1; }
+  .bannerArt img { object-fit: contain; object-position: center bottom; }
+  .heroActions { flex-direction: column; align-items: stretch; gap: 9px; margin-top: 20px; max-width: 53%; }
+  .heroActions :global(.btn) { font-size: 11px; min-height: 46px; padding: 12px 10px; gap: 8px; }
+  .whatsappLink { font-size: 9px; gap: 5px; line-height: 1.5; }
+  .bannerPackageDetails { max-width: 175px; margin-top: 9px; font-size: 10px; }
+  .supporting li { padding: 18px 12px; gap: 9px; align-items: flex-start; }
+  .supporting small { font-size: 8px; }
+  .supporting strong { font-size: 10px; }
+  .detailIcon svg { width: 17px; height: 17px; }
+  .heroIntroduction { padding-top: 25px; }
+  .heroIntroduction > div > p { font-size: 12px; }
+  .brandNote { font-size: 8px; letter-spacing: .06em; line-height: 1.9; }
+  .inclusionsGrid { grid-template-columns: 1fr; }
+  .inclusion { padding: 21px 0 21px 35px; position: relative; }
+  .inclusion > span { position: absolute; left: 0; top: 24px; }
+  .inclusion h3 { font-size: 14px; }
+  .inclusion p { font-size: 12px; }
+  .aboutLayout { grid-template-columns: 1fr; }
+  .aboutFigure { max-width: 410px; }
+  .aboutFigure > div { aspect-ratio: 4 / 3; }
+  .benefitsList { gap: 0 18px; }
+  .benefitsList li { gap: 9px; padding: 15px 0; }
+  .benefitsList p { font-size: 11px; }
+  .benefitsList li > span { min-width: 15px; font-size: 9px; }
+  .shivaWatermark { width: 85%; left: -20%; opacity: .035; }
+  .ganeshaWatermark { width: 75%; right: -20%; }
+  .ritualFigure { grid-template-columns: 140px 1fr; }
+  .ritualList li { grid-template-columns: 25px 1fr; gap: 12px; }
+  .ritualList h3 { font-size: 14px; }
+  .ritualList p { font-size: 12px; }
+  .final h2 { font-size: 31px; }
+  .finalActions { grid-template-columns: 1fr; }
+  .finalPrices { justify-content: space-between; gap: 20px; }
+  :global([data-locale='hi']) .bannerTitle { font-size: 29px; }
+  :global([data-locale='hi']) .bannerCopy { padding: 25px 24px 30px; }
+}
+@media (prefers-reduced-motion: reduce) { .bannerArt, .bannerCopy { animation: none; } }
+
+/* Burgundy and gold details shared with the Ishantam identity. */
+.inclusionsGrid{gap:14px 18px}
+.inclusion{position:relative;border:1px solid #dfcfb750;background:linear-gradient(135deg,#fffefa,#faf3e6);padding:23px;border-radius:6px}
+.inclusion>span{font-family:var(--font-display);font-size:22px;color:var(--brass);margin-bottom:10px}
+.inclusion h3{font-size:14px}.inclusion p{font-size:12px;line-height:1.85}
+.inclusionFootnote{margin-top:24px;font-size:11px}
+.offeringFigure>div{outline:1px solid #c3a16a;outline-offset:7px;border:7px solid #f7efdf;box-shadow:0 20px 35px #582b1810}
+.offeringFigure figcaption{margin-top:22px}
+.aboutFigure>div{border:9px solid #fffaf0;outline-color:#c3a16a;border-radius:46% 46% 4px 4px;box-shadow:0 18px 45px #50301e1a}
+.aboutFigure img{border-radius:inherit}
+.aboutInvocation{display:inline-block;border-block:1px solid #c5a16e55;padding:12px 0;color:var(--brass)}
+.templeDetail{border-top-color:#c9ac7a66}.templeDetail h3{font-family:var(--font-display);font-size:25px}
+.benefits :global(.eyebrow){color:#e6c17e}.benefits :global(.display-l){color:#fff3dc}.benefits :global(.display-l) em{color:#e6c17e}.benefits :global(.body){color:#d3bcb6}
+.benefitsList{gap:0 30px}.benefitsList li{padding:22px 0;border-color:#d7b57a30}.benefitsList li>span{color:#e6c17e;font-family:var(--font-display);font-size:22px}.benefitsList p{color:#f0dfd2;font-size:13px;line-height:1.8}.shivaWatermark{opacity:.07;mix-blend-mode:screen}
+.rituals{background:#fffdf7}.ritualFigure>div{border-radius:46% 46% 4px 4px;border:6px solid #f1e4cc;outline:1px solid #c8a571;outline-offset:5px}.ritualFigure figcaption{margin-top:20px}
+.ritualList li{border-color:#dbc6a14d;padding:22px 0}.ritualList li>span{font-family:var(--font-display);font-size:22px;color:var(--brass)}.ritualList h3{font-family:var(--font-display);font-size:22px}.ritualList p{line-height:1.9}
+.package{padding:34px 28px 28px;border-radius:8px;border:1px solid #d3b787;background:linear-gradient(145deg,#fffef9,#f9f0e0);box-shadow:0 10px 30px #532a1a08;transition:box-shadow .25s,border-color .25s}
+.package:hover{box-shadow:0 15px 38px #532a1a13;border-color:#b58b43}.package header>svg{color:var(--brass);padding:11px;box-sizing:content-box;border:1px solid #c3a16a50;border-radius:50%;background:#fff9ec}.package h3{font-family:var(--font-display);font-size:29px}.package header p{font-size:12px}.packagePrice{font-size:53px;color:var(--maroon);border-color:#ceb17d55}.package li{font-size:12px;line-height:1.85}.package li svg{color:var(--brass)}
+.packageSelected{background:radial-gradient(ellipse at 0 0,#7c304655,transparent 65%),#3d1020;border-color:#c49a54;box-shadow:0 14px 35px #3b0d2024}.packageSelected::before{content:none}
+.packageSelected h3{color:#fff1d5}.packageSelected header p{color:#dbc0b8}.packageSelected header>svg{color:#f1cf8b;border-color:#d4af6d55;background:#e7bd7710}.packageSelected .packagePrice{color:#f4d08d;border-color:#d3ad6e40}.packageSelected li{color:#ead6c8}.packageSelected li svg{color:#e8c27f}.packageSelected :global(.btn-primary){background:linear-gradient(110deg,#f0cf90,#d9ad62);border-color:#e4be79;color:#3d1020}
+.packageBadge{position:absolute;right:24px;top:28px;font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:#edcb89;border:1px solid #dfbd7b55;padding:5px 8px;border-radius:30px}
+.steps li>span{width:40px;height:40px;background:linear-gradient(135deg,#f5d79c,#d8af6b);border-color:#b68a44;color:#491524;box-shadow:0 3px 8px #75512116}.steps li:not(:last-child)::after{top:20px;border-color:#b9996155}.steps h3{font-family:var(--font-display);font-size:21px}.steps p{line-height:1.85}
+.final{border-block:1px solid #c6a46b66}.final h2{font-size:clamp(34px,3.8vw,48px)}.finalArt{opacity:.12}.finalMantra{border-left:1px solid #bca06855;padding-left:18px}.finalPrices strong{font-size:43px}
+@media(max-width:760px){.package{padding:28px}.steps li{padding-left:58px}.steps li:not(:last-child)::after{left:20px;top:48px}.inclusion{padding:22px}.benefitsList{gap:0 20px}.benefitsList p{font-size:12px}.benefitsList li{gap:12px}.ritualFigure>div{border-radius:35% 35% 3px 3px}}
+@media(max-width:540px){.inclusion{padding:21px 21px 21px 55px}.inclusion>span{top:18px;left:19px;font-size:20px}.aboutFigure>div{border-radius:38% 38% 4px 4px}.benefitsList{grid-template-columns:1fr}.benefitsList li{padding:16px 0}.benefitsList p{font-size:13px}.finalPrices strong{font-size:34px}.packageBadge{right:22px;top:26px}.packagePrice{font-size:48px}}
+
+/* Preserve the real gateway's full frontage and Hindi temple name. */
+.aboutLayout{grid-template-columns:1.05fr 1fr;gap:60px}
+.aboutFigure>div{aspect-ratio:3/2;border-radius:4px;border-width:6px;background:#efe0c5}
+.aboutFigure img{object-fit:contain;object-position:center}
+.templeThumbnail{width:120px;height:80px}.templeThumbnail img{object-fit:contain;background:#efe0c5}.templeThumbnail span{display:none}
+@media(max-width:900px){.aboutLayout{grid-template-columns:1fr;gap:34px}.aboutFigure{max-width:620px;width:100%}}
+@media(max-width:540px){.aboutFigure>div{aspect-ratio:3/2;border-radius:4px}.templeThumbnail{width:105px;height:70px}}

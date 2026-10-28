@@ -1,0 +1,7 @@
+.frame{position:absolute;inset:8px;border:1px solid #bd944f;border-radius:3px;pointer-events:none;box-shadow:0 0 0 3px #caa55d18,inset 0 0 0 3px #caa55d0d;color:#b78a3c}
+.corner{position:absolute;width:30px;height:30px;overflow:visible}
+.corner:nth-child(1){left:0;top:0}
+.corner:nth-child(2){right:0;top:0;transform:rotate(90deg)}
+.corner:nth-child(3){right:0;bottom:0;transform:rotate(180deg)}
+.corner:nth-child(4){left:0;bottom:0;transform:rotate(270deg)}
+.selected{border-color:#e8c57e;color:#f0ce88;box-shadow:0 0 0 3px #e5bd6414,inset 0 0 0 3px #e5bd640b}

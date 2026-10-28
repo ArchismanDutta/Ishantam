@@ -1,0 +1,7 @@
+.link{position:relative;isolation:isolate;overflow:hidden}
+.label{display:inline-flex;align-items:center;justify-content:center;gap:12px;transition:opacity .18s}
+.hidden{opacity:0}
+.vision{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(ellipse at center,#fff2b3c9,transparent 72%);pointer-events:none;animation:reveal 2s ease-in-out both}
+.shiva{height:calc(100% - 4px);width:auto;max-width:100%;color:#35121d;filter:drop-shadow(0 1px 4px #6b391a30)}
+@keyframes reveal{0%{opacity:0;transform:translateY(6px) scale(.85)}20%,80%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-2px) scale(1.04)}}
+@media(prefers-reduced-motion:reduce){.label{transition:none}.vision{animation:none}}

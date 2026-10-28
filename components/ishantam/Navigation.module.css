@@ -1,0 +1,23 @@
+.header { position: fixed; z-index: 50; inset: 0 0 auto; background: #300b16f7; border-top: 2px solid #c89b50; border-bottom: 1px solid #d7b16a45; backdrop-filter: blur(18px); box-shadow: 0 4px 24px #23081116; --ink: #ffe7b3; --ink-soft: #ead9c2; --ivory: #390b18; --maroon: #efcc8e; --rust: #efcc8e; --rule-strong: #c5a36b70; }
+.inner { display: flex; align-items: center; justify-content: space-between; gap: 25px; min-height: 108px; }
+.brand { display: inline-flex; gap: 11px; align-items: center; flex-shrink: 0; }
+.nav { display: flex; align-items: center; gap: clamp(16px, 1.9vw, 28px); margin-left: auto; }
+.nav a { font-size: 11px; letter-spacing: .025em; font-weight: 500; color: var(--ink-soft); padding: 11px 0; transition: color .2s; }
+.nav a:hover { color: var(--rust); }
+.actions { display: flex; align-items: center; gap: 18px; }
+.actions :global(.btn) { background: linear-gradient(110deg,#f0cf90,#d9ad62); color: #3d1020; border-color: #e4be79; font-size: 11px; padding: 12px 20px; min-height: 44px; }
+.menuButton { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; color: var(--maroon); }
+.dialog { position: fixed; inset: 0 0 0 auto; width: min(100%, 410px); height: 100%; max-width: 100%; max-height: 100%; border: 0; margin: 0 0 0 auto; padding: 28px; background: linear-gradient(155deg,#460f21,#230811); color: #f7e6c9; --ink: #ffe7b3; --ink-soft: #ead9c2; --ivory: #390b18; --maroon: #efcc8e; --rust: #efcc8e; --rule: #c5a36b35; --rule-strong: #c5a36b70; }
+.dialog::backdrop { background: #25191188; }
+.dialogTop { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+.dialogTop button { width: 44px; height: 44px; display: grid; place-items: center; }
+.dialog nav { display: flex; flex-direction: column; margin: 25px 0; }
+.dialog nav a { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--rule); font-size: 16px; }
+.dialog > a { width: 100%; }
+@media (max-width: 1120px) { .inner { gap: 18px; } .nav { gap: 16px; } .actions { gap: 12px; } .actions :global(.btn) { background: linear-gradient(110deg,#f0cf90,#d9ad62); color: #3d1020; border-color: #e4be79; padding-inline: 15px; } }
+@media (max-width: 940px) { .nav { display: none; } .actions { margin-left: auto; } .menuButton { display: flex; } }
+@media (max-width: 540px) { .inner { min-height: 92px; gap: 7px; } .brandMark { width: 32px; height: 32px; font-size: 24px; } .brand { gap: 8px; } .brand small { font-size: 7px; } .brand > span:last-child > span { font-size: 19px !important; } .actions :global(.btn) { background: linear-gradient(110deg,#f0cf90,#d9ad62); color: #3d1020; border-color: #e4be79; display: none; } .actions { margin-left: auto; } }
+
+.dialog > :global(.btn-primary){background:linear-gradient(110deg,#f0cf90,#d9ad62);color:#3d1020;border-color:#e4be79}.brand :global(img),.dialogTop :global(img){filter:drop-shadow(0 1px 4px #e7b95318)}
+
+.actions :global(.btn:hover),.dialog > :global(.btn-primary:hover){background:#ffe0a4;color:#3d1020}

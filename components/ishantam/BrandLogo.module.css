@@ -1,0 +1,1 @@
+.logo{display:block;object-fit:contain;height:auto;aspect-ratio:1;flex-shrink:0;max-width:100%;border-radius:3px;filter:drop-shadow(0 1px 1px #28160bd9) drop-shadow(0 2px 4px #28160b66)}.header{width:104px}.menu{width:144px}.footer{width:160px}.compact{width:88px}@media(max-width:540px){.header{width:84px}.footer{width:132px}.compact{width:76px}}
