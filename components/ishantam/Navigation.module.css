@@ -6,7 +6,6 @@
 .nav a:hover { color: var(--rust); }
 .actions { display: flex; align-items: center; gap: 18px; }
 .actions :global(.btn) { background: linear-gradient(110deg,#f0cf90,#d9ad62); color: #3d1020; border-color: #e4be79; font-size: 11px; padding: 12px 20px; min-height: 44px; }
-.compactCta { display: none; }
 .menuButton { display: none; width: 44px; height: 44px; align-items: center; justify-content: center; color: var(--maroon); }
 .dialog { position: fixed; inset: 0 0 0 auto; width: min(100%, 410px); height: 100%; max-width: 100%; max-height: 100%; border: 0; margin: 0 0 0 auto; padding: 28px; background: linear-gradient(155deg,#460f21,#230811); color: #f7e6c9; --ink: #ffe7b3; --ink-soft: #ead9c2; --ivory: #390b18; --maroon: #efcc8e; --rust: #efcc8e; --rule: #c5a36b35; --rule-strong: #c5a36b70; }
 .dialog::backdrop { background: #25191188; }
@@ -22,18 +21,13 @@
   .brand { gap: 8px; }
   .brand :global(img) { width: 72px; }
   .actions { margin-left: auto; gap: 6px; flex-shrink: 0; }
-  .actions :global(.btn) { background: linear-gradient(110deg,#ffe0a0,#edbd6d); color: #3d1020; border-color: #f1cb83; display: inline-flex; align-items: center; gap: 6px; padding: 7px 9px; min-height: 36px; font-size: 9px; white-space: nowrap; box-shadow: 0 3px 12px #e0b56825; }
-  .actions :global(.btn svg) { width: 13px; height: 13px; }
-  .fullCta { display: none; }
-  .compactCta { display: inline; }
+  .actions :global(.btn) { display: none; }
   .menuButton { width: 36px; height: 39px; flex: 0 0 36px; }
 }
 @media (max-width: 360px) {
   .inner { gap: 5px; }
   .brand :global(img) { width: 60px; }
   .actions { gap: 4px; }
-  .actions :global(.btn) { padding: 6px 8px; min-height: 33px; font-size: 8px; }
-  .actions :global(.btn svg) { width: 12px; height: 12px; }
   .menuButton { width: 32px; height: 35px; flex-basis: 32px; }
 }
 

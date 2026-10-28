@@ -10,7 +10,7 @@ import { LocaleToggle } from "./LocaleToggle";
 import styles from "./Navigation.module.css";
 
 export function Navigation() {
-  const { t, locale } = useLocale();
+  const { t } = useLocale();
   const [open, setOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   useEffect(() => {
@@ -26,7 +26,7 @@ export function Navigation() {
         <div className={`shell-wide ${styles.inner}`}>
           <a href="#home" className={styles.brand} aria-label="ISHANTAM — home"><BrandLogo preload /></a>
           <nav className={styles.nav} aria-label="Primary">{t.nav.items.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}</nav>
-          <div className={styles.actions}><LocaleToggle compact /><BookingLink><span className={styles.fullCta}>{t.nav.cta}</span><span className={styles.compactCta}>{locale === "hi" ? "पूजा बुक करें" : "Book Puja"}</span><Arrow /></BookingLink></div>
+          <div className={styles.actions}><LocaleToggle compact /><BookingLink>{t.nav.cta}<Arrow /></BookingLink></div>
           <button type="button" className={styles.menuButton} aria-label="Open menu" aria-expanded={open} onClick={() => { dialogRef.current?.showModal(); setOpen(true); }}><Menu size={22} /></button>
         </div>
       </header>
