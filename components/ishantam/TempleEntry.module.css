@@ -2,7 +2,7 @@
 .scene, .sanctuary, .gateway, .vignette, .embers { position: absolute; inset: 0; }
 .scene { overflow: hidden; }
 .sanctuary { background: radial-gradient(ellipse at 50% 45%, #172026 0%, #080d13 43%, #03060b 77%); }
-.stage { position: absolute; left: 50%; top: 48%; width: min(82svh, 85vw); aspect-ratio: 1; transform: translate(-50%, -50%); isolation: isolate; contain: layout paint; }
+.stage { position: absolute; left: 50%; top: 48%; width: min(82svh, 85vw); aspect-ratio: 1; transform: translate(-50%, -50%); isolation: isolate; contain: layout; }
 .backlight { position: absolute; inset: -24%; pointer-events: none; }
 .halo { position: absolute; inset: 9%; border-radius: 50%; background: radial-gradient(circle, #ffe4ad66 0%, #d2a4662e 28%, #91b9cb1a 45%, transparent 68%); filter: blur(16px); }
 .rays { position: absolute; inset: -9%; border-radius: 50%; background: repeating-conic-gradient(from 12deg, transparent 0deg 9deg, #ead3a512 11deg, transparent 14deg 24deg); mask-image: radial-gradient(circle, transparent 10%, #0009 23%, #000 34%, transparent 68%); filter: blur(3px); animation: raysTurn 80s linear infinite; }
