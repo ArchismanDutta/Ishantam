@@ -1,6 +1,6 @@
 "use client";
 
-import { packages as pricing, whatsAppLink } from "@/data/ishantam";
+import { brand, packages as pricing, whatsAppLink } from "@/data/ishantam";
 import { useLocale } from "./LocaleContext";
 import { BrandLogo } from "./BrandLogo";
 
@@ -42,7 +42,7 @@ export function Footer() {
               <ul className="footer-links">
                 <li><a href={whatsAppLink()} target="_blank" rel="noopener">{f.whatsAppLabel}</a></li>
                 <li style={{ color: "var(--ink-mute)" }}>{f.emailLabel}</li>
-                <li style={{ color: "var(--ink-mute)" }}>{f.phoneLabel}</li>
+                <li><a href={`tel:+91${brand.phone}`}>{f.phoneLabel} · {brand.phone}</a></li>
               </ul>
             </section>
           </div>

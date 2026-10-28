@@ -7,8 +7,8 @@ export const brand = {
   location: "Mangalnath Temple, Ujjain, Madhya Pradesh",
   // CONFIGURE BEFORE LAUNCH — numeric country-code + number, no spaces.
   // e.g. "919876543210" for +91 98765 43210. Leave empty to disable WhatsApp.
-  whatsappNumber: "",
-  phone: "",
+  whatsappNumber: "919165639348",
+  phone: "9165639348",
   email: "",
 };
 
