@@ -1,71 +1,50 @@
-.entry { position: fixed; inset: 0; z-index: 200; isolation: isolate; overflow: hidden; background: #080b10; color: #f4ead7; }
-.scene, .sanctuary, .gateway, .vignette, .embers { position: absolute; inset: 0; }
-.scene { overflow: hidden; }
-.sanctuary { background: radial-gradient(ellipse at 50% 45%, #172026 0%, #080d13 43%, #03060b 77%); }
-.stage { position: absolute; left: 50%; top: 48%; width: min(82svh, 85vw); aspect-ratio: 1; transform: translate(-50%, -50%); isolation: isolate; contain: layout; }
-.backlight { position: absolute; inset: -24%; pointer-events: none; }
-.halo { position: absolute; inset: 9%; border-radius: 50%; background: radial-gradient(circle, #ffe4ad66 0%, #d2a4662e 28%, #91b9cb1a 45%, transparent 68%); filter: blur(16px); }
-.rays { position: absolute; inset: -9%; border-radius: 50%; background: repeating-conic-gradient(from 12deg, transparent 0deg 9deg, #ead3a512 11deg, transparent 14deg 24deg); mask-image: radial-gradient(circle, transparent 10%, #0009 23%, #000 34%, transparent 68%); filter: blur(3px); animation: raysTurn 80s linear infinite; }
-.coreLight { position: absolute; inset: 29%; border-radius: 50%; background: #ffdf9b4a; filter: blur(35px); }
-.mandala { position: absolute; inset: 0; filter: drop-shadow(0 0 15px #e6c78755); }
-.mandalaImage { object-fit: contain; opacity: .75; animation: mandalaSpin 40s linear infinite; }
-.shiva { position: absolute; inset: 3% -3% -3%; z-index: 2; transform-origin: center bottom; animation: shivaFloat 8s ease-in-out infinite; will-change: transform; }
-.shivaImage { object-fit: contain; object-position: center bottom; animation: shivaGlow 5s ease-in-out infinite alternate; will-change: filter; }
-.groundLight { position: absolute; z-index: 1; left: 12%; right: 12%; bottom: -5%; height: 12%; border-radius: 50%; background: radial-gradient(ellipse, #dac39430, transparent 70%); filter: blur(10px); }
-.gateway { display: flex; perspective: 1500px; transform-style: preserve-3d; isolation: isolate; contain: layout paint; }
-.gateway::before { content: ''; position: absolute; inset: 0; z-index: 0; background: #080b10; transform: translateZ(-1px); }
-.jamb { position: relative; z-index: 2; flex: 0 0 11.125%; background-size: cover; }
-.jambLeft { background-image: url('/images/temple-frame-left.webp'); background-position: right center; }
-.jambRight { background-image: url('/images/temple-frame-right.webp'); background-position: left center; }
-.door { position: relative; z-index: 1; flex: 0 0 38.875%; height: 100%; background-size: cover; backface-visibility: hidden; transform-style: preserve-3d; box-shadow: inset 0 0 55px #08060270; }
-.door::after { content: ''; position: absolute; inset: 0; background: linear-gradient(#07090d38, transparent 40%, #080a0dbb); }
-.doorLeft { background-image: url('/images/temple-door-left.webp'); background-position: right center; transform-origin: left center; }
-.doorRight { background-image: url('/images/temple-door-right.webp'); background-position: left center; transform-origin: right center; }
-.seam { position: absolute; left: calc(50% - 2px); top: 0; bottom: 0; width: 4px; background: linear-gradient(transparent, #fff1ca 35%, #f4d798 70%, transparent); box-shadow: 0 0 22px 9px #e6b97045, 0 0 110px 32px #e6b97030; }
-.mist { position: absolute; pointer-events: none; left: -30%; right: -30%; bottom: -17%; height: 51%; background: radial-gradient(ellipse, #a8b4bd23, transparent 64%); filter: blur(25px); animation: mistDrift 13s ease-in-out infinite alternate; }
-.vignette { pointer-events: none; background: radial-gradient(ellipse at 50% 44%, transparent 23%, #05080b48 70%, #05080bbb), linear-gradient(#05080bd9, transparent 18%, transparent 67%, #05080be8); }
-.embers { pointer-events: none; }
-.embers i { position: absolute; width: 2px; height: 2px; background: #e8c990; box-shadow: 0 0 8px #eac58c55; border-radius: 50%; opacity: 0; animation: emberRise 9s linear infinite; }
-.top, .bottom { position: absolute; z-index: 5; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-inline: clamp(22px, 4vw, 74px); }
-.top { top: 0; min-height: 105px; border-top: 10px solid #07090c; }
-.brand { font-family: var(--font-display); font-size: 33px; line-height: 1; }
-.brand span { display: block; margin-top: 9px; font-family: var(--font-body); font-size: 7px; letter-spacing: .22em; color: #d0b783; }
-.location { font-size: 9px; letter-spacing: .2em; color: #d5cbb8; }
-.invitation { position: absolute; top: 43%; left: 22px; right: 22px; text-align: center; pointer-events: none; text-shadow: 0 2px 25px #000; }
-.invitation > span, .caption > span { color: #e1c69a; font-size: 9px; letter-spacing: .24em; }
-.invitation h2 { margin: 18px 0; font-family: var(--font-display); font-size: clamp(37px, 5vw, 72px); line-height: 1.1; }
-.caption { position: absolute; left: clamp(24px, 4vw, 74px); bottom: 19%; visibility: hidden; opacity: 0; text-shadow: 0 2px 24px #000; }
-.caption h2 { font-family: var(--font-display); font-size: clamp(52px, 6vw, 84px); line-height: 1; margin: 17px 0; }
-.caption p { color: #dfc99e; font-family: var(--font-sanskrit); font-size: 17px; }
-.bottom { bottom: 0; min-height: 95px; border-bottom: 10px solid #07090c; }
-.bottom > span { color: #dfc99e; font-family: var(--font-sanskrit); font-size: 25px; }
-.enterAnywhere { position: absolute; inset: 0; z-index: 6; width: 100%; height: 100%; display: flex; align-items: flex-end; justify-content: flex-end; padding: 0 clamp(22px, 4vw, 74px) 29px; cursor: pointer; background: transparent; }
-.enterLabel { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 44px; border: 1px solid #dbc79e65; background: #0b0e1370; color: #eee6d5; padding: 11px 16px; font-size: 11px; letter-spacing: .05em; }
-.enterAnywhere:focus-visible { outline: none; }
-.enterAnywhere:focus-visible .enterLabel { outline: 2px solid #f0dab1; outline-offset: 5px; }
-.enterAnywhere:hover .enterLabel { background: #d3b57325; border-color: #dbc79e; }
-.replay { display: inline-flex; align-items: center; gap: 9px; color: var(--maroon); border-bottom: 1px solid var(--brass-soft); padding: 8px 0; margin-top: 22px; font-size: 12px; }
-.entry[data-paused='true'] * { animation-play-state: paused; }
-@keyframes mistDrift { from { transform: translateX(-9%) scaleY(.8); } to { transform: translateX(9%) scaleY(1.15); } }
-@keyframes emberRise { 0% { opacity: 0; transform: translate(0, 35px); } 25%, 65% { opacity: .45; } 100% { opacity: 0; transform: translate(34px, -100px); } }
-@keyframes mandalaSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes shivaFloat { 0%, 100% { transform: translate3d(0, 0, 0) scale(1); } 50% { transform: translate3d(0, -8px, 0) scale(1.008); } }
-@keyframes shivaGlow { from { filter: drop-shadow(0 0 24px #ffb30045) drop-shadow(0 0 12px #fbb04030); } to { filter: drop-shadow(0 0 34px #ffca2870) drop-shadow(0 0 18px #ffb30055); } }
-@keyframes raysTurn { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@media (max-aspect-ratio: 3/4) {
-  .stage { top: 43%; width: min(94vw, 64svh); }
-  .caption { left: 22px; right: 22px; bottom: 16%; text-align: center; }
-  .caption h2 { font-size: 48px; margin: 10px 0; }
-  .caption p { font-size: 14px; }
+.entry {
+  position: fixed; inset: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(ellipse at 50% 45%, #172026 0%, #080d13 55%, #03060b 100%);
+  color: #f4ead7;
+  cursor: pointer;
+  animation: entryOut 420ms ease-in 820ms forwards;
 }
-@media (max-width: 650px) {
-  .top { min-height: 90px; }
-  .location { font-size: 8px; }
-  .jamb { flex-basis: 8%; }
-  .door { flex-basis: 42%; }
-  .brand { font-size: 28px; }
+.stage {
+  position: relative;
+  width: min(60svh, 70vw);
+  aspect-ratio: 1;
+  animation: shivaIn 650ms ease-out both;
+  filter: drop-shadow(0 0 28px #ffca2855);
+}
+.shivaImage { object-fit: contain; object-position: center bottom; }
+.top {
+  position: absolute; top: 0; left: 0; right: 0;
+  display: flex; justify-content: space-between; align-items: center; gap: 20px;
+  padding: 22px clamp(22px, 4vw, 74px);
+}
+.location { font-size: 9px; letter-spacing: .2em; color: #d5cbb8; }
+.caption {
+  position: absolute; left: 0; right: 0; bottom: 10%;
+  text-align: center; padding: 0 22px;
+  text-shadow: 0 2px 24px #000;
+  animation: captionIn 500ms ease-out 250ms both;
+}
+.caption > span { color: #e1c69a; font-size: 9px; letter-spacing: .24em; }
+.caption h2 { font-family: var(--font-display); font-size: clamp(44px, 6vw, 72px); line-height: 1; margin: 12px 0; }
+.caption p { color: #dfc99e; font-family: var(--font-sanskrit); font-size: 16px; }
+.replay {
+  display: inline-flex; align-items: center; gap: 9px;
+  color: var(--maroon); border-bottom: 1px solid var(--brass-soft);
+  padding: 8px 0; margin-top: 22px; font-size: 12px;
+}
+@keyframes shivaIn {
+  from { opacity: 0; transform: translateY(14px) scale(.96); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+@keyframes captionIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes entryOut {
+  to { opacity: 0; visibility: hidden; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .mist, .embers { display: none !important; }
-  .mandalaImage, .shiva, .shivaImage, .rays { animation: none; }
+  .entry, .stage, .caption { animation-duration: 1ms; }
 }

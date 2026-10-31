@@ -46,7 +46,7 @@ export function Hero() {
             </div>
           </div>
           <div className={banner.bannerArt}>
-            <Image src={mangalnathArt} alt={locale === "hi" ? "मंगलनाथ महादेव और शिवलिंग का पारंपरिक शैली में भक्ति चित्र" : "Traditional devotional illustration of Mangalnath Mahadev with a Shiva lingam"} fill preload placeholder="blur" sizes="(max-width: 650px) 90vw, 45vw" />
+            <Image src={mangalnathArt} alt={locale === "hi" ? "मंगलनाथ महादेव और शिवलिंग का पारंपरिक शैली में भक्ति चित्र" : "Traditional devotional illustration of Mangalnath Mahadev with a Shiva lingam"} fill priority placeholder="blur" sizes="(max-width: 650px) 90vw, 45vw" />
           </div>
         </div>
         <ul className={tickets.list}>
