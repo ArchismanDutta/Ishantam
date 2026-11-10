@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import mangalnathArt from "@/public/images/mangalnath-puja-art.webp";
-import { MapPin, MessageCircle, Video, UserRound, Flower2 } from "lucide-react";
+import { MapPin, MessageCircle, Video, UserRound, Flower2, CalendarDays } from "lucide-react";
 import { whatsAppLink } from "@/data/ishantam";
 import { useLocale } from "./LocaleContext";
 import { Arrow } from "./primitives";
@@ -13,7 +13,7 @@ import banner from "./HeroBanner.module.css";
 import tickets from "./HeroTickets.module.css";
 import { HeroFrame } from "./HeroFrame";
 
-const detailIcons = [MapPin, UserRound, Flower2, Video];
+const detailIcons = [MapPin, UserRound, Flower2, Video, CalendarDays];
 
 export function Hero() {
   const { t, locale } = useLocale();
