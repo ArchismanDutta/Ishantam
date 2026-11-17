@@ -35,6 +35,9 @@ export default function BookingResult() {
   }, [check]);
   const bookingState = booking?.state;
   useEffect(() => {
+    if (bookingState === "paid") router.replace("/thank-you");
+  }, [bookingState, router]);
+  useEffect(() => {
     if (!bookingState || bookingState === "paid") return;
     let attempts = 0;
     const timer = setInterval(() => { if (++attempts > 6) clearInterval(timer); else void check(); }, 10000);

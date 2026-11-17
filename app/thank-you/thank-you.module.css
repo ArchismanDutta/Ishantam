@@ -1,0 +1,100 @@
+.page {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% 18%, #ead2a52b, transparent 60%), var(--ivory);
+}
+.header {
+  max-width: 1240px;
+  margin: auto;
+  min-height: 116px;
+  padding: 6px var(--shell-pad);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--rule);
+}
+.headerActions, .homeLink { display: flex; align-items: center; gap: 28px; }
+.homeLink { gap: 10px; font-size: 12px; color: var(--maroon); }
+.main { max-width: 1180px; margin: auto; padding: 28px var(--shell-pad) 0; }
+.location { display: flex; align-items: center; justify-content: center; gap: 7px; color: var(--brass); font-size: 12px; margin-bottom: 22px; }
+.invitation {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 1.12fr 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 56px 50px;
+  background: radial-gradient(ellipse at 82% 35%, #7e283b66, transparent 62%), linear-gradient(120deg, #260a12, #4a1023);
+  border: 1px solid #b38b4d;
+  border-radius: 8px;
+  color: #fff1d8;
+  box-shadow: 0 15px 40px #3b0d2010;
+}
+.message { position: relative; z-index: 1; text-align: center; }
+.invocation { font-size: 17px; color: #e8c68e; margin-bottom: 24px; }
+.eyebrow { font-size: 9px; letter-spacing: .17em; color: #dfc49b; }
+.title { font: 500 clamp(64px, 7vw, 88px)/1.08 var(--font-display); margin: 14px 0 12px; color: #fff1d8; }
+.title span { color: #dfb870; }
+.subtitle { font: 400 23px/1.4 var(--font-display); max-width: 310px; margin: 0 auto 22px; }
+.message :global(.mark) { color: #e5bd76 !important; }
+.blessing { margin: 20px auto 0; max-width: 310px; color: #dfc5b6; font-size: 12px; line-height: 1.9; }
+.art { position: relative; min-width: 0; width: 100%; max-width: 340px; height: 390px; margin: auto; overflow: hidden; border: 1px solid #d6b678; border-radius: 48% 48% 4px 4px; background: radial-gradient(ellipse at center, #fff1d1, #e7c895); box-shadow: 0 0 0 7px #e8c8950b, 0 0 0 8px #e8c89525; }
+.art img { object-fit: contain; object-position: center bottom; mix-blend-mode: multiply; }
+.details { padding: 32px 28px 0; text-align: center; }
+.status { display: flex; justify-content: center; align-items: flex-start; gap: 12px; max-width: 680px; margin: auto; }
+.status h2 { font-size: 18px; font-weight: 500; color: var(--maroon); margin-bottom: 6px; }
+.status p { color: var(--ink-soft); font-size: 13px; line-height: 1.85; }
+.check { flex: 0 0 34px; height: 34px; display: grid; place-items: center; border: 1px solid #a7b495; border-radius: 50%; color: #52663b; background: #eaf0e2; }
+.receipt { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 32px; margin: 24px auto 0; max-width: 680px; padding: 24px; background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; text-align: left; }
+.receipt dt { font-size: 11px; color: var(--ink-soft); margin-bottom: 5px; }
+.receipt dd { margin: 0; font-size: 14px; font-weight: 600; overflow-wrap: anywhere; color: var(--maroon); }
+.actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 24px; }
+.statusLink { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--maroon); margin-top: 20px; text-decoration: underline; text-underline-offset: 4px; }
+.next { padding: 38px 0 30px; margin-top: 32px; border-top: 1px solid var(--rule); }
+.next > h2 { font: 500 30px/1.3 var(--font-display); color: var(--maroon); text-align: center; margin-bottom: 28px; }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.steps li { display: flex; align-items: flex-start; gap: 13px; }
+.stepIcon { flex: 0 0 42px; height: 46px; display: grid; place-items: center; border: 1px solid var(--rule); border-radius: 24px 24px 5px 5px; color: var(--brass); background: var(--paper); }
+.stepNumber { font-size: 10px; letter-spacing: .1em; color: var(--brass); }
+.steps h3 { margin: 3px 0 7px; color: var(--maroon); font-size: 14px; font-weight: 600; }
+.steps p { font-size: 12px; line-height: 1.8; color: var(--ink-soft); }
+.help { padding: 22px 0 30px; font-size: 12px; color: var(--ink-soft); text-align: center; }
+.help a { display: inline-block; color: var(--maroon); text-decoration: underline; text-underline-offset: 4px; margin-left: 6px; }
+.footer { display: flex; justify-content: space-between; gap: 16px; padding: 20px max(var(--shell-pad), calc((100vw - 1052px) / 2)); background: var(--midnight); color: #d6bd9c; font-size: 11px; }
+:global([data-locale="hi"]) .title { font-family: var(--font-sanskrit); font-size: clamp(52px, 6vw, 70px); line-height: 1.4; }
+:global([data-locale="hi"]) .title span { display: none; }
+:global([data-locale="hi"]) .subtitle { font-family: var(--font-sanskrit); font-size: 20px; line-height: 1.7; }
+:global([data-locale="hi"]) .next > h2 { font-family: var(--font-sanskrit); font-size: 25px; line-height: 1.5; }
+@media (max-width: 900px) {
+  .invitation { padding: 48px 30px; gap: 8px; }
+  .art { height: 300px; }
+  .steps { gap: 20px; }
+  .steps li { flex-direction: column; }
+}
+@media (max-width: 700px) {
+  .header { min-height: 96px; }
+  .headerActions { gap: 14px; }
+  .homeLink { display: none; }
+  .main { padding-top: 20px; }
+  .location { font-size: 11px; margin-bottom: 18px; }
+  .invitation { grid-template-columns: 1fr; padding: 40px 28px 32px; gap: 24px; }
+  .invocation { margin-bottom: 18px; }
+  .title { font-size: 66px; }
+  .art { height: 240px; width: 100%; max-width: 350px; margin: auto; }
+  .details { padding: 26px 0 0; }
+  .actions { flex-direction: column; align-items: stretch; max-width: 380px; margin-inline: auto; }
+  .actions :global(.btn) { white-space: normal; }
+  .status { text-align: left; }
+  .receipt { padding: 20px; gap: 18px; }
+  .steps { grid-template-columns: 1fr; gap: 24px; max-width: 420px; margin: auto; }
+  .steps li { flex-direction: row; gap: 16px; }
+  .next { margin-top: 28px; padding-top: 28px; padding-bottom: 12px; }
+  .footer { flex-direction: column; align-items: center; gap: 6px; text-align: center; }
+}
+@media (max-width: 380px) {
+  .receipt { grid-template-columns: 1fr; }
+  .invitation { padding-inline: 24px; }
+  .title { font-size: 58px; }
+  .subtitle { font-size: 21px; }
+}
