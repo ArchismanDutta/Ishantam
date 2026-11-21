@@ -158,7 +158,7 @@ export interface Content {
 
 // ─── Shared package definitions (prices, IDs — same across locales) ───
 
-const PRICES = { individual: "₹801", couple: "₹1,201", family: "₹2,001" };
+const PRICES = { individual: "₹501", couple: "₹801", family: "₹1,100" };
 
 // Promotional strike price — brief originally flagged this; the Hindi copy
 // explicitly provided it, so it is shown in the Hindi hero only.
@@ -194,7 +194,7 @@ const en: Content = {
       { label: "Sankalp",       value: "In your name & Gotra" },
       { label: "Performed by",  value: "Vedic priests" },
       { label: "Delivery",      value: "Video via WhatsApp" },
-      { label: "Puja Date",     value: "17 November · Mangal Var" },
+      { label: "Puja Date",     value: "1 December · Somvar" },
     ],
     brandNote: "ISHANTAM · A dedicated facilitator of Vedic puja for devotees across India and abroad.",
     imageCaption: "Mangalnath Temple entrance · Ujjain, Madhya Pradesh.",
@@ -412,7 +412,7 @@ const hi: Content = {
       { label: "संकल्प",      value: "आपके नाम व गोत्र से" },
       { label: "पुरोहित",     value: "विद्वान पुरोहित" },
       { label: "वीडियो",     value: "WhatsApp पर साझा" },
-      { label: "पूजा तिथि",  value: "17 नवम्बर · मंगलवार" },
+      { label: "पूजा तिथि",  value: "1 दिसम्बर · सोमवार" },
     ],
     brandNote: "ISHANTAM · देश-विदेश के श्रद्धालुओं के लिए पारंपरिक वैदिक पूजा की व्यवस्था।",
     imageCaption: "मंगलनाथ मंदिर का प्रवेश द्वार · उज्जैन, मध्य प्रदेश।",

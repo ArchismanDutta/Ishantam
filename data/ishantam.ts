@@ -45,8 +45,8 @@ export const packages: PujaPackage[] = [
   {
     id: "individual",
     name: "Individual Puja",
-    price: 801,
-    priceLabel: "₹801",
+    price: 501,
+    priceLabel: "₹501",
     forWhom: "For a single devotee",
     features: [
       "Booking for one individual",
@@ -60,8 +60,8 @@ export const packages: PujaPackage[] = [
   {
     id: "couple",
     name: "Couple Puja",
-    price: 1201,
-    priceLabel: "₹1,201",
+    price: 801,
+    priceLabel: "₹801",
     forWhom: "For two devotees",
     features: [
       "Booking for two individuals",
@@ -74,8 +74,8 @@ export const packages: PujaPackage[] = [
   {
     id: "family",
     name: "Family Puja",
-    price: 2001,
-    priceLabel: "₹2,001",
+    price: 1100,
+    priceLabel: "₹1,100",
     forWhom: "For 5 – 6 family members",
     features: [
       "Booking for 5 – 6 family members",
@@ -198,7 +198,7 @@ export const steps = [
 export const faqs = [
   {
     q: "How much does Mangal Dosha Shanti Puja cost?",
-    a: "Packages start at ₹801 for an individual, ₹1,201 for a couple, and ₹2,001 for a family of 5–6 members. The ceremony performed is identical across packages — the difference lies in the number of names and Gotras included in the Sankalp.",
+    a: "Packages start at ₹501 for an individual, ₹801 for a couple, and ₹1,100 for a family of 5–6 members. The ceremony performed is identical across packages — the difference lies in the number of names and Gotras included in the Sankalp.",
   },
   {
     q: "Will the puja be performed using my name and Gotra?",
